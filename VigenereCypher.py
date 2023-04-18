@@ -32,3 +32,5 @@ key = key.upper()
 key = key.replace(" ","")
 
 #Print the outcome
+ciphertext = vigenere_cipher(message, key)
+print(f"\nHere's the generated ciphertext:", ciphertext)
