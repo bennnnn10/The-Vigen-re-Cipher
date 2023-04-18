@@ -12,8 +12,13 @@ def vigenere_cipher(message, key):
     #Convertion of message and key to their specific numerical numbers
     convert_message = [ord(i) - 65 for i in message]
     convert_key = [ord(i) - 65 for i in key]
-    
-#Encrypt the message using Vigenère Cipher
+
+    #Encrypt the message using Vigenère Cipher
+    cipher = []
+    for i in range(len(convert_message)):
+        encrypted_value = (convert_message[i] + convert_key[i % len(key)]) % 26
+        cipher.append(encrypted_value)
+        
 #Ciphertext numerical numbers to letters
 #Ask the user to enter the message and key
 #Print the outcome
