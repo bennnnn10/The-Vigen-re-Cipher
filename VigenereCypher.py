@@ -24,4 +24,8 @@ def vigenere_cipher(message, key):
     return ciphertext
 
 #Ask the user to enter the message and key
+message = input("Your Message: ")
+message = message.upper()
+message = message.replace(" ","")
+
 #Print the outcome
