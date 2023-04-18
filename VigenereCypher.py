@@ -34,3 +34,38 @@ key = key.replace(" ","")
 #Print the outcome
 ciphertext = vigenere_cipher(message, key)
 print(f"\nHere's the generated ciphertext:", ciphertext)
+
+#Ask the user if they want to try it again
+while True:
+    print(f"\nDo you want to try it again?")
+    pick_one = input("YES or NO? ")
+    if pick_one == "YES":
+        print("Codeperman is here!" .center(81))
+        print("Please enter below the text!")
+#Create a python program using Vigenère Cipher to encrypt the message
+        def vigenere_cipher(message, key):
+    #Convertion of message and key to their specific numerical numbers
+            convert_message = [ord(i) - 65 for i in message]
+            convert_key = [ord(i) - 65 for i in key]
+    #Encrypt the message using Vigenère Cipher
+            cipher = []
+            for i in range(len(convert_message)):
+                encrypted_value = (convert_message[i] + convert_key[i % len(key)]) % 26
+                cipher.append(encrypted_value)
+    #Ciphertext numerical numbers to letters
+            ciphertext = ''.join([chr(encrypted_value + 65) for encrypted_value in cipher])
+            return ciphertext
+#Ask the user to enter the message and key
+        message = input("Your Message: ")
+        message = message.upper()
+        message = message.replace(" ","")
+        key = input("Your Key: ")
+        key = key.upper()
+        key = key.replace(" ","")
+#Print the outcome
+        ciphertext = vigenere_cipher(message, key)
+        print(f"\nHere's the generated ciphertext:", ciphertext)
+
+    if pick_one == "NO":
+        print(f"\nCodperman is leaving.....")
+        break
