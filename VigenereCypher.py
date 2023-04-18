@@ -8,7 +8,11 @@ print(f"\nHey there, " + user_name + "!")
 print("Please enter below the text that you want to encrypt!")
 
 #Create a python program using Vigenère Cipher to encrypt the message
-#Convertion of message and key to their specific numerical numbers
+def vigenere_cipher(message, key):
+    #Convertion of message and key to their specific numerical numbers
+    convert_message = [ord(i) - 65 for i in message]
+    convert_key = [ord(i) - 65 for i in key]
+    
 #Encrypt the message using Vigenère Cipher
 #Ciphertext numerical numbers to letters
 #Ask the user to enter the message and key
