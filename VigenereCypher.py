@@ -18,7 +18,10 @@ def vigenere_cipher(message, key):
     for i in range(len(convert_message)):
         encrypted_value = (convert_message[i] + convert_key[i % len(key)]) % 26
         cipher.append(encrypted_value)
-        
-#Ciphertext numerical numbers to letters
+
+    #Ciphertext numerical numbers to letters
+    ciphertext = ''.join([chr(encrypted_value + 65) for encrypted_value in cipher])
+    return ciphertext
+
 #Ask the user to enter the message and key
 #Print the outcome
